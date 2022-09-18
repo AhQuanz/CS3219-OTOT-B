@@ -3,8 +3,7 @@ import MatchRequestModel from "./MatchRequest.js";
 //Set up mongoose connection
 import mongoose from "mongoose";
 
-let mongoDB =
-  "mongodb+srv://root:root@cs3219-taskb.886gw1x.mongodb.net/?retryWrites=true&w=majority";
+let mongoDB = process.env.DB_URL;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 let db = mongoose.connection;
