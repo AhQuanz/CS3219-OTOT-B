@@ -3,5 +3,7 @@ node_js:
   - v16.17.0
 install:
   - npm install
+services:
+  - mongodb
 script:
   - npm test
