@@ -1,3 +1,4 @@
+import "dotenv/config";
 import MatchRequestModel from "./MatchRequest.js";
 
 //Set up mongoose connection
