@@ -10,7 +10,7 @@ describe("matchRecords", () => {
   describe("POST /", () => {
     // Test to get all students record
     it("should insert 1 match record", function (done) {
-      this.timeout(10000);
+      this.timeout(50000);
       chai
         .request(app)
         .post("/taskB/findMatch")
