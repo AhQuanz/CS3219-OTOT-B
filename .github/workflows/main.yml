@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: liquan-cs3219-task-b
     strategy:
       matrix:
         node-version: [16.x]
