@@ -56,6 +56,7 @@ jobs:
           application_name: cs3219-task-b
           environment_name: Cs3219taskb-env
           region: ap-southeast-1
+          version_label: "my-app"
           deployment_package: deploy.zip
 
       - name: Deployed!
