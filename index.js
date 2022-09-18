@@ -6,12 +6,15 @@ import {
 } from "./controller.js";
 // Import express
 import express from "express";
+import cors from "cors";
 
 // Initialize the app
 let app = express();
 // Setup server port
 var port = 8080;
 const router = express.Router();
+app.use(cors()); // this line would enable cors for all cors requests
+app.options("*", cors());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
