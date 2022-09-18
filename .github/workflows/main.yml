@@ -1,9 +1,9 @@
-name: Your app name
+name: CS3219-TaskB
 
 on:
   push:
     branches:
-      - github-actions-aws
+      - main
 
 jobs:
   build:
