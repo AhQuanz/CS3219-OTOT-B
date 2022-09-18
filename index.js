@@ -30,3 +30,5 @@ app.use("/taskB", router).all((_, res) => {
 app.listen(port, function () {
   console.log("Running Task B on port " + port);
 });
+
+export default app;
