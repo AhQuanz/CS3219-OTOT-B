@@ -17,7 +17,7 @@ describe("matchRecords", () => {
         .end((err, res) => {
           res.should.have.status(201);
           res.body.should.be.a("object");
-          done();
+          setTimeout(done, 10000);
         });
     });
   });
@@ -31,7 +31,7 @@ describe("matchRecords", () => {
         .end((err, res) => {
           res.should.have.status(201);
           res.body.should.be.a("object");
-          done();
+          setTimeout(done, 10000);
         });
     });
   });
@@ -45,7 +45,7 @@ describe("matchRecords", () => {
         .end((err, res) => {
           res.should.have.status(201);
           res.body.should.be.a("object");
-          done();
+          setTimeout(done, 10000);
         });
     });
   });
@@ -59,7 +59,7 @@ describe("matchRecords", () => {
         .end((err, res) => {
           res.should.have.status(201);
           res.body.should.be.a("object");
-          done();
+          setTimeout(done, 10000);
         });
     });
   });
