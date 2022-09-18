@@ -29,7 +29,7 @@ export async function createMatch(req, res) {
 }
 export async function retrieveMatch(req, res) {
   try {
-    const { email } = req.body;
+    const { email } = req.query;
     const matchRequest = await MatchRequestModel.findOne({ email: email });
 
     if (matchRequest) {
