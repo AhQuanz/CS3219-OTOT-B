@@ -7,13 +7,16 @@ services:
   - mongodb
 script:
   - npm test
+
 deploy:
   provider: elasticbeanstalk
-  access_key_id:
-    secure: AKIAQD6NEAVURCSHZ7ZI
-  secret_access_key:
-    secure: 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
   region: "ap-southeast-1"
   app: "cs3219-task-b"
   env: "Cs3219taskb-env"
   bucket_name: "elasticbeanstalk-ap-southeast-1-008483243369"
+  access_key_id:
+    secure: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
+  on:
+    branch: main
