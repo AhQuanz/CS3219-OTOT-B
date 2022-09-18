@@ -6,9 +6,9 @@ name: CS3219-TaskB
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -34,15 +34,15 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          
+
       - name: Generate deployment package
         run: zip -r deploy.zip * -x "**node_modules**"
-          
+
       - name: Beanstalk Deploy for app
         uses: einaregilsson/beanstalk-deploy@v10
         with:
-          aws_access_key: ${{secrets.AWS_ACCESS_REACT_KEY_ID}}
-          aws_secret_key: ${{secrets.AWS_SECRET_ACCESS_REACT_KEY}}
+          aws_access_key: ${{secrets.AWS_ACCESS_KEY}}
+          aws_secret_key: ${{secrets.AWS_SECRET_KEY}}
           application_name: "cs3219-task-b"
           environment_name: "Cs3219taskb-env"
           region: "ap-southeast-1"
