@@ -3,6 +3,7 @@ import {
   retrieveMatch,
   deleteMatch,
   updateMatch,
+  retrieveLargeData,
 } from "./controller.js";
 // Import express
 import express from "express";
@@ -24,6 +25,7 @@ router.post("/findMatch", createMatch);
 router.get("/retrieveMatch", retrieveMatch);
 router.delete("/deleteMatch", deleteMatch);
 router.put("/updateMatch", updateMatch);
+router.get("/retrieveMatchs", retrieveLargeData);
 
 app.use("/taskB", router).all((_, res) => {
   res.setHeader("content-type", "application/json");
