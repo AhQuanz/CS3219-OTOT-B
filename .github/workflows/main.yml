@@ -57,7 +57,6 @@ jobs:
           environment_name: Cs3219taskb-env
           region: ap-southeast-1
           version_label: "my-app-${{steps.format-time.outputs.replaced}}"
-          deployment_package: deploy.zip
 
       - name: Deployed!
         run: echo App deployed to ELB
