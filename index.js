@@ -27,7 +27,7 @@ router.delete("/deleteMatch", deleteMatch);
 router.put("/updateMatch", updateMatch);
 //router.get("/retrieveMatchs", retrieveLargeData);
 
-app.use("/taskB", router).all((_, res) => {
+app.use("/", router).all((_, res) => {
   res.setHeader("content-type", "application/json");
 });
 
