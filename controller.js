@@ -15,7 +15,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 if (!db) console.log("Error connecting db");
 else console.log("Db connected successfully");
 
-const redisClient = createClient({ legacyMode: true});
+const redisClient = createClient({ legacyMode: true });
 redisClient.connect();
 
 export async function createMatch(req, res) {
@@ -85,10 +85,12 @@ export async function updateMatch(req, res) {
       return res.status(400).json({ message: "No request found" });
     }
 
-    const resp = await MatchRequestModel.updateOne({
-      email: email,
-      difficulty: newDifficulty,
-    });
+    const resp = await MatchRequestModel.updateOne(
+      {
+        email: email,
+      },
+      { difficulty: newDifficulty }
+    );
 
     if (resp.error) {
       return res
@@ -109,17 +111,13 @@ export async function retrieveLargeData(req, res) {
   }
 
   redisClient.get(`gender=${gender}`, async (error, records) => {
-    if(records != null) {
-      console.log("Cache Hit")
-      res
-      .status(201)
-      .json(JSON.parse(records)); 
+    if (records != null) {
+      console.log("Cache Hit");
+      res.status(201).json(JSON.parse(records));
     } else {
       const records = await TaskE.find({ gender: gender });
       redisClient.setEx(`gender=${gender}`, 3600, JSON.stringify(records));
-      res
-      .status(201)
-      .json(records); 
+      res.status(201).json(records);
     }
   });
 }
