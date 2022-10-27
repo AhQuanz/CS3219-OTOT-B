@@ -3,7 +3,7 @@ import {
   retrieveMatch,
   deleteMatch,
   updateMatch,
-  retrieveLargeData,
+  //retrieveLargeData,
 } from "./controller.js";
 // Import express
 import express from "express";
