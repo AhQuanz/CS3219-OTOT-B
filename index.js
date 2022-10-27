@@ -3,7 +3,7 @@ import {
   retrieveMatch,
   deleteMatch,
   updateMatch,
-  //retrieveLargeData,
+  retrieveLargeData,
 } from "./controller.js";
 // Import express
 import express from "express";
@@ -12,7 +12,7 @@ import cors from "cors";
 // Initialize the app
 let app = express();
 // Setup server port
-var port = 8080;
+const port = process.env.port || 3000;
 const router = express.Router();
 app.use(cors()); // this line would enable cors for all cors requests
 app.options("*", cors());
@@ -25,7 +25,7 @@ router.post("/findMatch", createMatch);
 router.get("/retrieveMatch", retrieveMatch);
 router.delete("/deleteMatch", deleteMatch);
 router.put("/updateMatch", updateMatch);
-//router.get("/retrieveMatchs", retrieveLargeData);
+router.get("/retrieveMatchs", retrieveLargeData);
 
 app.use("/taskB", router).all((_, res) => {
   res.setHeader("content-type", "application/json");
