@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "nodejs": "^16.18.0",
     "chai": "^4.3.6",
     "chai-http": "^4.3.0",
     "cors": "^2.8.5",
